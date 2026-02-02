@@ -1,6 +1,7 @@
 #include "ScalarConverter.hpp"
 #include "terminalOutput.hpp"
 #include <iostream>
+#include <string>
 
 int main(int argc, char* argv[])
 {
@@ -9,7 +10,7 @@ int main(int argc, char* argv[])
         std::cout << C_YELLOW << "Usage: /convert <value>\n" << C_END;
         return (1);
     }
-	if (argv[1] == "test")
+	if (static_cast<std::string>(argv[1]) == "test")
 	{
 
 	}
