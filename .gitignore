@@ -4,3 +4,4 @@ build*
 
 #executable names
 convert
+serializer
