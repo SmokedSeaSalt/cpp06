@@ -34,16 +34,7 @@ int isChar(std::string value)
     return (0);
 }
 
-enum e_type
-{
-    CHAR,
-    INT,
-    FLOAT,
-    DOUBLE,
-    UNKNOWN,
-};
-
-void convertChar(char value)
+void ScalarConverter::convertChar(char value)
 {
     if (std::isprint(value))
         std::cout << "char: '" << value << "'\n";
@@ -54,7 +45,7 @@ void convertChar(char value)
     std::cout << "double: " << static_cast<double>(value) << "\n";
 }
 
-void convertInt(int value)
+void ScalarConverter::convertInt(int value)
 {
     if (value > 0 && value < 127 && std::isprint(static_cast<char>(value)))
         std::cout << "char: '" << static_cast<char>(value) << "'\n";
@@ -65,7 +56,7 @@ void convertInt(int value)
     std::cout << "double: " << static_cast<double>(value) << "\n";
 }
 
-void convertFloat(float value)
+void ScalarConverter::convertFloat(float value)
 {
     if (!std::isfinite(value))
     {
@@ -89,7 +80,7 @@ void convertFloat(float value)
     std::cout << "double: " << static_cast<double>(value) << "\n";
 }
 
-void convertDouble(double value)
+void ScalarConverter::convertDouble(double value)
 {
     if (!std::isfinite(value))
     {
@@ -113,7 +104,7 @@ void convertDouble(double value)
     std::cout << "double: " << value << "\n";
 }
 
-e_type setType(std::string value)
+e_type ScalarConverter::setType(std::string value)
 {
     if (isChar(value))
         return (CHAR);
