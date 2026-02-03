@@ -6,17 +6,15 @@
 
 class Serializer
 {
-	public:
-		Serializer();
-		Serializer(const Serializer& other);
-		Serializer& operator=(const Serializer& other);
-		virtual ~Serializer() = 0;
+    public:
+        static uintptr_t serialize(Data* ptr);
+        static Data*     deserialize(uintptr_t raw);
 
-		static uintptr_t serialize(Data* ptr);
-		static Data* deserialize(uintptr_t raw);
-
-	private:
-
+    private:
+        Serializer();
+        Serializer(const Serializer& other);
+        Serializer& operator=(const Serializer& other);
+        virtual ~Serializer() = 0;
 };
 
 #endif // SERIALIZER_HPP

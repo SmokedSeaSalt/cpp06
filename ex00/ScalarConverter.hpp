@@ -15,14 +15,14 @@ enum e_type
 class ScalarConverter
 {
     public:
+        static void convert(std::string value);
+
+    private:
         ScalarConverter();
         ScalarConverter(const ScalarConverter& other);
         ScalarConverter& operator=(const ScalarConverter& other);
         virtual ~ScalarConverter() = 0;
 
-        static void convert(std::string value);
-
-    private:
         static e_type setType(std::string value);
         static void   convertChar(char value);
         static void   convertInt(int value);
